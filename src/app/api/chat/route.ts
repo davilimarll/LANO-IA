@@ -1,13 +1,49 @@
 import { NextRequest, NextResponse } from 'next/server'
 import ZAI from 'z-ai-web-dev-sdk'
+import fs from 'fs/promises'
+import path from 'path'
 
 // Store conversations in memory (use database in production)
 const conversations = new Map<string, Array<{ role: string; content: string }>>()
 
 let zaiInstance: any = null
+let configInitialized = false
+
+async function ensureConfigFile() {
+  if (configInitialized) return
+
+  try {
+    // Try to read existing config first
+    try {
+      await fs.access(path.join(process.cwd(), '.z-ai-config'))
+      configInitialized = true
+      return
+    } catch {
+      // Config doesn't exist, create it dynamically
+    }
+
+    // Create config file dynamically
+    const config = {
+      baseUrl: process.env.ZAI_BASE_URL || 'http://172.25.136.193:8080/v1',
+      apiKey: process.env.ZAI_API_KEY || 'Z.ai',
+      chatId: process.env.ZAI_CHAT_ID,
+      userId: process.env.ZAI_USER_ID
+    }
+
+    const configPath = path.join(process.cwd(), '.z-ai-config')
+    await fs.writeFile(configPath, JSON.stringify(config, null, 2))
+
+    configInitialized = true
+    console.log('ZAI config file created dynamically')
+  } catch (error) {
+    console.error('Failed to create ZAI config file:', error)
+    throw new Error('Failed to initialize ZAI configuration')
+  }
+}
 
 async function getZAIInstance() {
   if (!zaiInstance) {
+    await ensureConfigFile()
     zaiInstance = await ZAI.create()
   }
   return zaiInstance
