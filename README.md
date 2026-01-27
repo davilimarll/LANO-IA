@@ -1,141 +1,141 @@
-# 🚀 Welcome to Z.ai Code Scaffold
+# 🤖 Lano IA - Assistente Conversacional com Corpo Visual
 
-A modern, production-ready web application scaffold powered by cutting-edge technologies, designed to accelerate your development with [Z.ai](https://chat.z.ai)'s AI-powered coding assistance.
+Uma aplicação de IA conversacional com um corpo visual animado (bolinha que se move pela tela), construída com Next.js 16 e integrada com z-ai-web-dev-sdk.
 
-## ✨ Technology Stack
+## 🎨 Recursos
 
-This scaffold provides a robust foundation built with:
+- 💬 **Chat Interativo**: Converse com a IA em português
+- 🎱 **Corpo Visual**: A IA tem uma bolinha animada que se move pela tela
+- ✨ **Animações**: A bolinha reage quando a IA está pensando ou respondendo
+- 🖱️ **Interação**: Clique na bolinha para movê-la pela tela
+- 📱 **Responsivo**: Funciona perfeitamente em mobile e desktop
+- 🎭 **Personalidade**: A IA (Lano IA) tem personalidade amigável e brincalhona
 
-### 🎯 Core Framework
-- **⚡ Next.js 16** - The React framework for production with App Router
-- **📘 TypeScript 5** - Type-safe JavaScript for better developer experience
-- **🎨 Tailwind CSS 4** - Utility-first CSS framework for rapid UI development
+## 🚀 Como Executar Localmente
 
-### 🧩 UI Components & Styling
-- **🧩 shadcn/ui** - High-quality, accessible components built on Radix UI
-- **🎯 Lucide React** - Beautiful & consistent icon library
-- **🌈 Framer Motion** - Production-ready motion library for React
-- **🎨 Next Themes** - Perfect dark mode in 2 lines of code
+### Pré-requisitos
 
-### 📋 Forms & Validation
-- **🎣 React Hook Form** - Performant forms with easy validation
-- **✅ Zod** - TypeScript-first schema validation
+- Node.js 18+
+- Bun (recomendado) ou npm/yarn
 
-### 🔄 State Management & Data Fetching
-- **🐻 Zustand** - Simple, scalable state management
-- **🔄 TanStack Query** - Powerful data synchronization for React
-- **🌐 Fetch** - Promise-based HTTP request
-
-### 🗄️ Database & Backend
-- **🗄️ Prisma** - Next-generation TypeScript ORM
-- **🔐 NextAuth.js** - Complete open-source authentication solution
-
-### 🎨 Advanced UI Features
-- **📊 TanStack Table** - Headless UI for building tables and datagrids
-- **🖱️ DND Kit** - Modern drag and drop toolkit for React
-- **📊 Recharts** - Redefined chart library built with React and D3
-- **🖼️ Sharp** - High performance image processing
-
-### 🌍 Internationalization & Utilities
-- **🌍 Next Intl** - Internationalization library for Next.js
-- **📅 Date-fns** - Modern JavaScript date utility library
-- **🪝 ReactUse** - Collection of essential React hooks for modern development
-
-## 🎯 Why This Scaffold?
-
-- **🏎️ Fast Development** - Pre-configured tooling and best practices
-- **🎨 Beautiful UI** - Complete shadcn/ui component library with advanced interactions
-- **🔒 Type Safety** - Full TypeScript configuration with Zod validation
-- **📱 Responsive** - Mobile-first design principles with smooth animations
-- **🗄️ Database Ready** - Prisma ORM configured for rapid backend development
-- **🔐 Auth Included** - NextAuth.js for secure authentication flows
-- **📊 Data Visualization** - Charts, tables, and drag-and-drop functionality
-- **🌍 i18n Ready** - Multi-language support with Next Intl
-- **🚀 Production Ready** - Optimized build and deployment settings
-- **🤖 AI-Friendly** - Structured codebase perfect for AI assistance
-
-## 🚀 Quick Start
+### Instalação
 
 ```bash
-# Install dependencies
+# Instalar dependências
 bun install
 
-# Start development server
+# Executar em desenvolvimento
 bun run dev
-
-# Build for production
-bun run build
-
-# Start production server
-bun start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your application running.
+A aplicação estará disponível em `http://localhost:3000`
 
-## 🤖 Powered by Z.ai
+## ⚙️ Configuração para Produção (Vercel)
 
-This scaffold is optimized for use with [Z.ai](https://chat.z.ai) - your AI assistant for:
+### Variáveis de Ambiente
 
-- **💻 Code Generation** - Generate components, pages, and features instantly
-- **🎨 UI Development** - Create beautiful interfaces with AI assistance  
-- **🔧 Bug Fixing** - Identify and resolve issues with intelligent suggestions
-- **📝 Documentation** - Auto-generate comprehensive documentation
-- **🚀 Optimization** - Performance improvements and best practices
+Para funcionar corretamente no Vercel, você precisa configurar as seguintes variáveis de ambiente:
 
-Ready to build something amazing? Start chatting with Z.ai at [chat.z.ai](https://chat.z.ai) and experience the future of AI-powered development!
+1. **ZAI_BASE_URL**: URL base da API do Z.ai
+2. **ZAI_API_KEY**: Chave de API do Z.ai
+3. **ZAI_CHAT_ID** (opcional): ID do chat
+4. **ZAI_USER_ID** (opcional): ID do usuário
 
-## 📁 Project Structure
+### Configurando no Vercel
+
+1. Vá para o dashboard do Vercel
+2. Selecione seu projeto
+3. Navegue para **Settings** > **Environment Variables**
+4. Adicione as seguintes variáveis:
 
 ```
-src/
-├── app/                 # Next.js App Router pages
-├── components/          # Reusable React components
-│   └── ui/             # shadcn/ui components
-├── hooks/              # Custom React hooks
-└── lib/                # Utility functions and configurations
+ZAI_BASE_URL = https://api.z.ai/v1  # Substitua pela URL real
+ZAI_API_KEY = sua_api_key_aqui       # Substitua pela sua chave real
 ```
 
-## 🎨 Available Features & Components
+5. Clique em **Save**
+6. Faça um novo deploy
 
-This scaffold includes a comprehensive set of modern web development tools:
+## 📁 Estrutura do Projeto
 
-### 🧩 UI Components (shadcn/ui)
-- **Layout**: Card, Separator, Aspect Ratio, Resizable Panels
-- **Forms**: Input, Textarea, Select, Checkbox, Radio Group, Switch
-- **Feedback**: Alert, Toast (Sonner), Progress, Skeleton
-- **Navigation**: Breadcrumb, Menubar, Navigation Menu, Pagination
-- **Overlay**: Dialog, Sheet, Popover, Tooltip, Hover Card
-- **Data Display**: Badge, Avatar, Calendar
+```
+lano-ia/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── chat/
+│   │   │       └── route.ts       # API endpoint para chat
+│   │   ├── page.tsx                # Página principal com UI
+│   │   └── layout.tsx              # Layout da aplicação
+│   └── components/
+│       └── ui/                     # Componentes shadcn/ui
+├── prisma/
+│   └── schema.prisma               # Schema do banco de dados
+├── .z-ai-config                   # Configuração do SDK (local)
+└── package.json
+```
 
-### 📊 Advanced Data Features
-- **Tables**: Powerful data tables with sorting, filtering, pagination (TanStack Table)
-- **Charts**: Beautiful visualizations with Recharts
-- **Forms**: Type-safe forms with React Hook Form + Zod validation
+## 🛠️ Tecnologias Utilizadas
 
-### 🎨 Interactive Features
-- **Animations**: Smooth micro-interactions with Framer Motion
-- **Drag & Drop**: Modern drag-and-drop functionality with DND Kit
-- **Theme Switching**: Built-in dark/light mode support
+- **Framework**: Next.js 16 com App Router
+- **Linguagem**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **UI Components**: shadcn/ui
+- **IA**: z-ai-web-dev-sdk
+- **Icons**: Lucide React
+- **Database**: Prisma ORM + SQLite
 
-### 🔐 Backend Integration
-- **Authentication**: Ready-to-use auth flows with NextAuth.js
-- **Database**: Type-safe database operations with Prisma
-- **API Client**: HTTP requests with Fetch + TanStack Query
-- **State Management**: Simple and scalable with Zustand
+## 🤖 Como a IA Funciona
 
-### 🌍 Production Features
-- **Internationalization**: Multi-language support with Next Intl
-- **Image Optimization**: Automatic image processing with Sharp
-- **Type Safety**: End-to-end TypeScript with Zod validation
-- **Essential Hooks**: 100+ useful React hooks with ReactUse for common patterns
+A aplicação usa o SDK z-ai-web-dev-sdk para se comunicar com o modelo de linguagem. O fluxo é:
 
-## 🤝 Get Started with Z.ai
+1. Usuário envia uma mensagem via interface de chat
+2. Frontend faz POST para `/api/chat`
+3. Backend usa ZAI SDK para gerar resposta
+4. Resposta é enviada de volta ao frontend
+5. A bolinha animada reage durante todo o processo
 
-1. **Clone this scaffold** to jumpstart your project
-2. **Visit [chat.z.ai](https://chat.z.ai)** to access your AI coding assistant
-3. **Start building** with intelligent code generation and assistance
-4. **Deploy with confidence** using the production-ready setup
+## 🎨 Design e UX
+
+- **Gradiente**: Tons de roxo e rosa
+- **Animações**: Suaves e fluidas
+- **Acessibilidade**: Componentes com suporte ARIA
+- **Feedback Visual**: Indicadores de carregamento e estados
+- **Footer Sticky**: Sempre fixo na parte inferior
+
+## 📝 Personalidade da IA
+
+A Lano IA foi configurada com as seguintes características:
+
+- **Idioma**: Português (respondendo em outras línguas se solicitado)
+- **Tom**: Amigável, brincalhão e prestativo
+- **Comportamento**: Menciona que está se movendo enquanto pensa
+- **Emojis**: Usa emojis para tornar a conversa mais envolvente
+
+## 🔧 Solução de Problemas
+
+### Erro: "Configuration file not found or invalid"
+
+O código foi projetado para criar automaticamente o arquivo de configuração. Se o erro persistir:
+
+1. Verifique se as variáveis de ambiente estão configuradas no Vercel
+2. Faça um novo deploy manual
+3. Verifique os logs do Vercel para detalhes
+
+### A IA não responde
+
+1. Verifique se `ZAI_BASE_URL` e `ZAI_API_KEY` estão corretos
+2. Confirme que a URL da API é acessível
+3. Verifique os logs do servidor para erros
+
+## 📄 Licença
+
+Este projeto é open source e está disponível sob a licença MIT.
+
+## 👤 Autor
+
+Desenvolvido por Davi Ribeiro
 
 ---
 
-Built with ❤️ for the developer community. Supercharged by [Z.ai](https://chat.z.ai) 🚀
+**Nota**: Este projeto foi criado usando a plataforma Z.ai Code. Para mais informações, visite [Z.ai](https://z.ai).
