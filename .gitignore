@@ -41,7 +41,7 @@ yarn-error.log*
 next-env.d.ts
 local-*
 .claude
-.z-ai-config
+# .z-ai-config - removido para permitir commit necessário para Vercel
 dev.log
 test
 prompt
