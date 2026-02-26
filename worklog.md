@@ -55,3 +55,19 @@ Stage Summary:
 - Suporte a variáveis de ambiente para produção
 - Mais robusto para diferentes ambientes de deploy
 - Não depende mais de arquivo físico no sistema de arquivos do deploy
+
+---
+Task ID: 4
+Agent: Codex
+Task: Definir diretrizes narrativas para sessão de RPG Dark Fantasy (Lano)
+
+Work Log:
+- Registradas diretrizes de narrativa para um Mestre de RPG de Alta Fantasia Sombria
+- Estruturado formato fixo de resposta com Era/Local, Hospedeiro Atual e Situação
+- Fixadas regras de parada (STOP SEQUENCE), sem controle de ações de Lano e foco em hospedeiros de elite
+- Mantido tom épico, político e bélico, com progressão por ciclo de hospedeiros
+
+Stage Summary:
+- Cenário de RPG com identidade de Lano estabelecida
+- Regras absolutas de condução narrativa documentadas
+- Estrutura de resposta pronta para uso imediato em sessões
